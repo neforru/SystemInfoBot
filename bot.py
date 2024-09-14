@@ -7,17 +7,14 @@ import winreg
 import discord
 from discord.ext import commands
 
-# Получение абсолютного пути к файлу конфигурации
 def get_config_path():
     return os.path.join(os.path.dirname(__file__), 'config.json')
 
-# Загрузка конфигурации из JSON-файла
 def load_config():
     config_path = get_config_path()
     with open(config_path, 'r') as f:
         return json.load(f)
 
-# Загрузка конфигурации
 config = load_config()
 BOT_TOKEN = config['BOT_TOKEN']
 CHANNEL_ID = config['CHANNEL_ID']
